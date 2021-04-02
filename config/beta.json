@@ -1,0 +1,7 @@
+{
+    "port": 8000,
+    "mongoUrl": "mongodb+srv://princeinder:prince123@cluster0.lbs8d.mongodb.net/employee-management?retryWrites=true&w=majority",
+    "jwtsecret": "jwtsecret",
+    "jwtexpire": 800000
+  }
+  

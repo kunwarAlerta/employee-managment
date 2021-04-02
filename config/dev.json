@@ -1,0 +1,6 @@
+{
+  "port": 8000,
+  "mongoUrl": "mongodb://localhost:27017/employee-management",
+  "jwtsecret": "jwtsecret",
+  "jwtexpire": 800000
+}
