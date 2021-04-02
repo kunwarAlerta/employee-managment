@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "export  NODE_ENV=dev && node server.js",
     "beta": "export NODE_ENV=beta && node server.js",
-    "live": "export NODE_ENV=live && pm2 start server.js --name EMPLOYEE_MANAGEMENT"
+    "live": "export NODE_ENV=live && pm2 start server.js --name EMPLOYEE_MANAGEMENT",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false  cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
