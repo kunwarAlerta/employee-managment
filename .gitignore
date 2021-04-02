@@ -1,5 +1,5 @@
 /node_modules
-/client/node_modules
+/client-app/node_modules
 /http-server
 /node
 /.idea

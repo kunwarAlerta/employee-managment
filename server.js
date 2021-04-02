@@ -25,9 +25,9 @@ app.use("/api/v1/panel", require("./v1/routes/panel"));
 app.use(handleErrorsApi);
 app.set("view engine", "ejs");
 app.use("/static", express.static(path.join(__dirname, "./uploads/")));
-app.use(express.static(path.join(__dirname, 'client/build')))
+app.use(express.static(path.join(__dirname, 'client-app/build')))
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build'))
+    res.sendFile(path.join(__dirname, 'client-app/build'))
 })
 
 app.use(function (req, res, next) {
