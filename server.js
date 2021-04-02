@@ -16,9 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(morgan("dev"));
 
-app.get("/", function (req, res) {
-  res.sendFile("index.html", { root: __dirname });
-});
+
 app.use("/api/v1", require("./v1/routes/frontend"));
 app.use("/api/v1/panel", require("./v1/routes/panel"));
 
