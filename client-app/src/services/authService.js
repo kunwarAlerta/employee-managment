@@ -1,5 +1,5 @@
 import axios from "axios";
-import LocalStorageService from "../services/localstorageService";
+import LocalStorageService from "./localstorageService";
 import {
   USER_SIGNIN_LOADING,
   USER_SIGNIN_SUCCESS,
@@ -18,6 +18,7 @@ const login = (input) => async (dispatch) => {
     payload: input,
   });
   try {
+  
     const { data } = await axios.post('/api/v1/panel/login', input);
     localStorage.setItem('userData',JSON.stringify(data.data.user))
     LocalStorageService._setAccessToken(data.data.accessToken);

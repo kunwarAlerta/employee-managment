@@ -8,6 +8,7 @@ import {
   SvgIcon
 } from '@material-ui/core';
 import { Search as SearchIcon } from 'react-feather';
+import { Navigate } from 'react-router';
 
 const CustomerListToolbar = (props) => (
   <Box {...props}>
@@ -17,44 +18,15 @@ const CustomerListToolbar = (props) => (
         justifyContent: 'flex-end'
       }}
     >
-      {/* <Button>
-        Import
-      </Button>
-      <Button sx={{ mx: 1 }}>
-        Export
-      </Button> */}
       <Button
         color="primary"
         variant="contained"
+       onClick={Navigate('employee/add')}
       >
         Add employee
       </Button>
     </Box>
-    <Box sx={{ mt: 3 }}>
-      <Card>
-        <CardContent>
-          <Box sx={{ maxWidth: 500 }}>
-            <TextField
-              fullWidth
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SvgIcon
-                      fontSize="small"
-                      color="action"
-                    >
-                      <SearchIcon />
-                    </SvgIcon>
-                  </InputAdornment>
-                )
-              }}
-              placeholder="Search employee"
-              variant="outlined"
-            />
-          </Box>
-        </CardContent>
-      </Card>
-    </Box>
+
   </Box>
 );
 

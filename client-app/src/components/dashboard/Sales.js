@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import EmployeeData from './EmployeeData';
 
 const Sales = (props) => {
   const theme = useTheme();
@@ -98,23 +99,9 @@ const Sales = (props) => {
             Last 7 days
           </Button>
         )}
-        title="Latest Sales"
+        title="Employees Overview"
       />
-      <Divider />
-      <CardContent>
-        <Box
-          sx={{
-            height: 400,
-            position: 'relative'
-          }}
-        >
-          <Bar
-            data={data}
-            options={options}
-          />
-        </Box>
-      </CardContent>
-      <Divider />
+          <EmployeeData/>
       <Box
         sx={{
           display: 'flex',

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import PerfectScrollbar from 'react-perfect-scrollbar';
@@ -20,7 +19,7 @@ import {
 import AddIcon from '@material-ui/icons/Add';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import getInitials from 'src/utils/getInitials';
+
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -33,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const CustomerListResults = ({ customers, ...rest }) => {
+const EmployeeListDashboard = ({ customers, ...rest }) => {
 
   const classes = useStyles();
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
@@ -83,7 +82,7 @@ const CustomerListResults = ({ customers, ...rest }) => {
   return (
     <Card {...rest}>
       <PerfectScrollbar>
-        <Box sx={{ minWidth: 1050 }}>
+        <Box >
           <Table>
             <TableHead>
               <TableRow>
@@ -91,19 +90,10 @@ const CustomerListResults = ({ customers, ...rest }) => {
                   Name
                 </TableCell>
                 <TableCell>
-                  Email
+                Clocked In
                 </TableCell>
                 <TableCell>
-                  Address
-                </TableCell>
-                <TableCell>
-                  Job Description
-                </TableCell>
-                <TableCell>
-                 Weekly Performance
-                </TableCell>
-                <TableCell>
-                Action
+                Clocked Out
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -130,25 +120,34 @@ const CustomerListResults = ({ customers, ...rest }) => {
                     </Box>
                   </TableCell>
                   <TableCell>
-                    {customer.email}
+                    <Box
+                      sx={{
+                        alignItems: 'center',
+                        display: 'flex'
+                      }}
+                    >
+                      <Typography
+                        color="textPrimary"
+                        variant="body1"
+                      >
+                        {customer.name}
+                      </Typography>
+                    </Box>
                   </TableCell>
                   <TableCell>
-                    {`${customer.city}, ${customer.country}`}
-                  </TableCell>
-                  <TableCell>
-                    {customer.jobDescription}
-                  </TableCell>
-                  <TableCell>
-                    {customer.weeklyPerformance}
-                  </TableCell>
-                  <TableCell>
-      <Fab color="primary" size="small" aria-label="edit" className={classes.margin}>
-        <EditIcon />
-      </Fab>
-      <Fab color="secondary" size="small" aria-label="delete" className={classes.margin}>
-        <DeleteIcon />
-      </Fab>
-      
+                    <Box
+                      sx={{
+                        alignItems: 'center',
+                        display: 'flex'
+                      }}
+                    >
+                      <Typography
+                        color="textPrimary"
+                        variant="body1"
+                      >
+                        {customer.name}
+                      </Typography>
+                    </Box>
                   </TableCell>
                 </TableRow>
               ))}
@@ -169,8 +168,8 @@ const CustomerListResults = ({ customers, ...rest }) => {
   );
 };
 
-CustomerListResults.propTypes = {
+EmployeeListDashboard.propTypes = {
   customers: PropTypes.array.isRequired
 };
 
-export default CustomerListResults;
+export default EmployeeListDashboard;

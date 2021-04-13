@@ -2,12 +2,25 @@ import { Helmet } from 'react-helmet';
 import { Box, Container } from '@material-ui/core';
 import CustomerListResults from 'src/components/customer/CustomerListResults';
 import CustomerListToolbar from 'src/components/customer/CustomerListToolbar';
-import customers from 'src/__mocks__/customers';
+import { useDispatch ,useSelector} from 'react-redux';
+import { getEmployees } from 'src/services/employeeService';
+import { useEffect } from 'react';
 
-const CustomerList = () => (
+const EmployeeList = () => {
+
+const dispatch =useDispatch();
+const employeeData = useSelector((state) => state.employeeData);
+const { loading, employees } = employeeData;
+
+  useEffect(()=>{
+    dispatch(getEmployees())
+  },[]);
+
+
+  return (
   <>
     <Helmet>
-      <title>Orders | Employee</title>
+      <title>Employee | Manage Employees</title>
     </Helmet>
     <Box
       sx={{
@@ -19,11 +32,12 @@ const CustomerList = () => (
       <Container maxWidth={false}>
         <CustomerListToolbar />
         <Box sx={{ pt: 3 }}>
-          <CustomerListResults customers={customers} />
+          <CustomerListResults customers={employees} />
         </Box>
       </Container>
     </Box>
   </>
 );
+    }
 
-export default CustomerList;
+export default EmployeeList;

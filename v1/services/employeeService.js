@@ -17,7 +17,7 @@ async function getAll(params) {
             { $count: "total" },
             { $addFields: { pageNo: params.pageNo } },
           ],
-          employees: [{ $skip: skip }, { $limit: limit }], // add projection here wish you re-shape the docs
+          employees: [{ $skip: skip }, { $limit: limit }],
         },
       },
       { $unwind: "$metadata" },
@@ -63,7 +63,7 @@ async function getAllBySearch(params) {
             { $count: "total" },
             { $addFields: { pageNo: params.pageNo } },
           ],
-          users: [{ $skip: skip }, { $limit: limit }],
+          employees: [{ $skip: skip }, { $limit: limit }],
         },
       },
       { $unwind: { path: "$metadata", preserveNullAndEmptyArrays: true } },

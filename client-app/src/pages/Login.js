@@ -1,4 +1,3 @@
-import { Link as RouterLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { useSelector, useDispatch } from "react-redux";
 import * as Yup from 'yup';
@@ -7,13 +6,10 @@ import {
   Box,
   Button,
   Container,
-  Grid,
-  Link,
   TextField,
   Typography
 } from '@material-ui/core';
 import { login } from 'src/services/authService';
-
 
 const Login = () => {
   const dispatch =useDispatch();
@@ -45,7 +41,8 @@ const Login = () => {
               password: Yup.string().max(255).required('Password is required')
             })}
             onSubmit={(values) => {
-              dispatch(login(values))
+              //dispatch(loginEmployee(values))
+             dispatch(login(values))
             }}
           >
             {({

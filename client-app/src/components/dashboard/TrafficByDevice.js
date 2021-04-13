@@ -9,17 +9,14 @@ import {
   colors,
   useTheme
 } from '@material-ui/core';
-import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import PhoneIcon from '@material-ui/icons/Phone';
-import TabletIcon from '@material-ui/icons/Tablet';
+import PersonIcon from '@material-ui/icons/People';
 
 const TrafficByDevice = (props) => {
   const theme = useTheme();
-
   const data = {
     datasets: [
       {
-        data: [63, 15, 22],
+        data: [props.employeeCount, props.TodayClockedInCount, props.TodayClockedOutCount],
         backgroundColor: [
           colors.indigo[500],
           colors.red[600],
@@ -30,7 +27,7 @@ const TrafficByDevice = (props) => {
         hoverBorderColor: colors.common.white
       }
     ],
-    labels: ['Desktop', 'Tablet', 'Mobile']
+    labels: ['Employees', 'Clocked In', 'Clocked Out']
   };
 
   const options = {
@@ -57,28 +54,28 @@ const TrafficByDevice = (props) => {
 
   const devices = [
     {
-      title: 'Desktop',
-      value: 63,
-      icon: LaptopMacIcon,
+      title: 'Employees',
+      value: props.employeeCount,
+      icon: PersonIcon,
       color: colors.indigo[500]
     },
     {
-      title: 'Tablet',
-      value: 15,
-      icon: TabletIcon,
+      title: 'Clocked In',
+      value: props.TodayClockedInCount,
+      icon: PersonIcon,
       color: colors.red[600]
     },
     {
-      title: 'Mobile',
-      value: 23,
-      icon: PhoneIcon,
+      title: 'Clocked Out',
+      value: props.TodayClockedOutCount,
+      icon: PersonIcon,
       color: colors.orange[600]
     }
   ];
 
   return (
     <Card {...props}>
-      <CardHeader title="Traffic by Device" />
+      <CardHeader title="Today" />
       <Divider />
       <CardContent>
         <Box
@@ -124,7 +121,6 @@ const TrafficByDevice = (props) => {
                 variant="h2"
               >
                 {value}
-                %
               </Typography>
             </Box>
           ))}

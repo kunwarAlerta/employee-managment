@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import { userSigninReducer } from "../reducers/authReducer";
 import { userReducer } from "../reducers/userReducer";
 import { dashboardReducer } from "../reducers/dashboardReducer";
+import { employeeReducer } from "../reducers/employeeReducer";
 import { adminReducer } from "../reducers/adminReducer";
 
 
@@ -13,6 +14,7 @@ const initialState = {
 };
 const reducer = combineReducers({
   userSignin: userSigninReducer,
+  employeeData:employeeReducer,
   dashboardData: dashboardReducer,
   userData: userReducer,
   adminData: adminReducer,

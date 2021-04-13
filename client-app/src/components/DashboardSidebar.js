@@ -12,17 +12,11 @@ import {
 } from '@material-ui/core';
 import {
   BarChart as BarChartIcon,
-  Lock as LockIcon,
   Settings as SettingsIcon,
-  ShoppingBag as ShoppingBagIcon,
   User as UserIcon,
-  UserPlus as UserPlusIcon,
-  ShoppingCart as OrderIcon
 } from 'react-feather';
 import NavItem from './NavItem';
 
-
-const user= JSON.parse(localStorage.getItem('userData'));
 
 const items = [
   {
@@ -31,8 +25,8 @@ const items = [
     title: 'Dashboard'
   },
   {
-    href: '/app/orders',
-    icon: OrderIcon,
+    href: '/app/employees',
+    icon: UserIcon,
     title: 'Employees'
   },
   {

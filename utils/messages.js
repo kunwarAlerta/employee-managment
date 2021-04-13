@@ -18,9 +18,8 @@ const messages = {
   PHONE_ALREADY_EXISTS: "Phone number already exist",
   INVALID_VERIFICATION_CODE: "Please enter valid otp.",
   OTP_VERIFIED_SUCCESSFULLY: "Otp Verified Successfully",
-  ORDER_CREATED_SUCCESSFULLY:"Order Created Successfully",
   CONNECTION_EXIST_ALREADY: "Connection exist already",
   CONNECTED_SENT_SUCCESSFULLY: "Connection request send successfully",
-  CMS_PAGES_UPDATED: "Cms updated successfully",
+  EMPLOYEE_CREATED_SUCCESSFULLY: "Employee created successfully",
 };
 module.exports = messages;

@@ -24,13 +24,13 @@ const TotalCustomers = (props) => (
             gutterBottom
             variant="h6"
           >
-            TOTAL CUSTOMERS
+            Clocked In
           </Typography>
           <Typography
             color="textPrimary"
             variant="h3"
           >
-            1,600
+           {props.clockedInCount} 
           </Typography>
         </Grid>
         <Grid item>
@@ -45,30 +45,6 @@ const TotalCustomers = (props) => (
           </Avatar>
         </Grid>
       </Grid>
-      <Box
-        sx={{
-          alignItems: 'center',
-          display: 'flex',
-          pt: 2
-        }}
-      >
-        <ArrowUpwardIcon sx={{ color: green[900] }} />
-        <Typography
-          variant="body2"
-          sx={{
-            color: green[900],
-            mr: 1
-          }}
-        >
-          16%
-        </Typography>
-        <Typography
-          color="textSecondary"
-          variant="caption"
-        >
-          Since last month
-        </Typography>
-      </Box>
     </CardContent>
   </Card>
 );

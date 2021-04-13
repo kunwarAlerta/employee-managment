@@ -34,10 +34,6 @@ const UserModel = new Schema(
         setStatus: { type: Boolean, default: false },
       },
     ],
-    role: {
-      type: String,
-      enum: ["ADMIN","USER"],
-    },
     accessToken: {
       type: String,
       index: true,

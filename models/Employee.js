@@ -5,6 +5,12 @@ const EmployeeModel = new Schema(
     name: {
        type:String,
     },
+    email:{
+      type:String,
+    },
+    password:{
+      type:String,
+    },
     country: {
       type:String,
     },
